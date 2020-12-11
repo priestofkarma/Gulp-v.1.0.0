@@ -1,0 +1,91 @@
+/* ============ Стили сброса ============== */
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Стили сброса для айфонов конец */
+
+/* Стили сбросса начало*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+* {
+  outline: none;
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: border-box;
+  }
+}
+
+input::placeholder {
+  padding: 0;
+}
+
+input {
+  outline: none;
+}
+
+/* сброс кнопки очистки в инпутах в експлорере */
+input::-ms-clear {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+html, body {
+  text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* фикс скролла при overflow-y: hidden; на айфонах*/
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: roboto, sans-serif;
+  min-width: 320px;
+  position: relative;
+  //line-height: 1.65;
+}
+/* Стили сбросса конец*/
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+

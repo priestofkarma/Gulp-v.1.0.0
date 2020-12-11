@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "roboto";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Light.eot");
+  src: url("../fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Light.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Regular.eot");
+  src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/Roboto/Roboto-Bold.eot");
+  src: url("../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto-s";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot");
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto-s";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot");
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto-s";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Light.eot");
+  src: url("../fonts/Roboto_Slab/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Light.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Light.ttf") format("truetype"); }
+
+/*=====================================================================
+Стили сброса
+===================================================================== **/
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="search"] {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/* Стили сброса для айфонов конец */
+/* Стили сбросса начало*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+* {
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  *:before, *:after {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+
+input::-webkit-input-placeholder {
+  padding: 0; }
+
+input::-moz-placeholder {
+  padding: 0; }
+
+input:-ms-input-placeholder {
+  padding: 0; }
+
+input::-ms-input-placeholder {
+  padding: 0; }
+
+input::placeholder {
+  padding: 0; }
+
+input {
+  outline: none; }
+
+/* сброс кнопки очистки в инпутах в експлорере */
+input::-ms-clear {
+  display: none; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s; }
+
+textarea {
+  resize: none;
+  outline: none; }
+
+a:hover {
+  text-decoration: none; }
+
+html, body {
+  height: 100%;
+  text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  /* фикс скролла при overflow-y: hidden; на айфонах*/
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: roboto, sans-serif;
+  min-width: 320px;
+  position: relative; }
+
+/* Стили сбросса конец*/
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.text-center {
+  text-align: center; }
+
+/*=====================================================================
+стили модулей, то есть блоков, которые могут
+использоваться несколько раз на одной странице. 
+===================================================================== **/
+/* ------------------------------------------------------------------ */
+/* Стили для slick-slider 
+/* ------------------------------------------------------------------ */
+/* Слайдер */
+/* Слайдер запущен */
+/* Слайдер с точками */
+/* Ограничивающая оболочка */
+/* Лента слайдов */
+/* Слайд */
+/* Слайд активный (показывается) */
+/* Слайд основной */
+/* Слайд по центру */
+/* Клонированный слайд */
+/* Стрелка */
+/* Стрелка влево */
+/* Стрелка вправо */
+/* Стрелка не активная */
+/* Точки (булиты) */
+/* Активная точка */
+/* Элемент точки */
+/*=====================================================================
+
+   Table of content:
+   a. Common styles.
+   b. Header styles.
+   c.
+   d.
+   e. 
+   f. 
+   g. 
+   h. 
+   i. 
+   j. 
+   k. 
+   l. 
+   m. 
+
+===================================================================== */
+/* ------------------------------------------------------------------ */
+/* a. Common styles.
+/* ------------------------------------------------------------------ */
+body {
+  background-color: #eeaaee; }
+
+/* ------------------------------------------------------------------ */
+/* b. Header Styles.
+/* ------------------------------------------------------------------ */
