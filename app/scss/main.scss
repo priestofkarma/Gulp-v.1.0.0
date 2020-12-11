@@ -2,9 +2,10 @@
 @import "fonts";
 @import "base";
 @import "blocks/modules";
+/* header block */
 @import "blocks/header";
+
+/* footer block */
 @import "blocks/footer";
 
-@include font($futura-light, 18, 700)
-
-//@import "media";
+/* page block */

@@ -89,3 +89,24 @@ body {
   text-align: center;
 }
 
+/* Стили сброса для contact form7 */
+.wpcf7-form br {
+  display: none !important;
+}
+span.wpcf7-not-valid-tip {
+  display: none !important;
+}
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  display: none !important;
+}
+input.wpcf7-not-valid {
+  border: 1px solid red !important;
+}
+div.wpcf7-mail-sent-ok {
+  display: none !important;
+}
+div.wpcf7 .ajax-loader {
+  display: none !important;
+}
+/*Стили сброса для contact form7 end */

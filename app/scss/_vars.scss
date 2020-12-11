@@ -6,21 +6,16 @@ $gradient: linear-gradient(189deg, #eeeeee 33%, #d2d2d2 94%);
 
 /* fonts */
 $futura-light: FuturaPT-Light, sans-serif;
-$futura-book: FuturaPT-Book, sans-serif;
-$futura-medium: FuturaPT-Medium, sans-serif;
-$futura-demi: FuturaPT-Demi, sans-serif;
-$futura-bold: FuturaPT-Bold, sans-serif;
-$futura-extraBold: FuturaPT-ExtraBold, sans-serif;
-$playfair: PlayfairDisplay, sans-serif;
-$playfair-italic: PlayfairDisplay, sans-serif;
 
-@mixin font ($family, $size, $weight) {
+
+@mixin font($family: $futura-book, $size: 16px, $weight: 400) {
     font-family: $family;
     font-size: $size;
     font-weight: $weight;
 }
-@mixin bgi {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+
+@mixin bgi($size: cover, $position: center, $repeat: no-repeat) {
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
 }

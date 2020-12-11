@@ -1,8 +1,10 @@
 @charset "UTF-8";
+/* fonts */
 @font-face {
   font-family: "roboto";
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto/Roboto-Light.eot");
   src: url("../fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Light.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("truetype"); }
 
@@ -10,6 +12,7 @@
   font-family: "roboto";
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto/Roboto-Regular.eot");
   src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
 
@@ -17,6 +20,7 @@
   font-family: "roboto";
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto/Roboto-Bold.eot");
   src: url("../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"); }
 
@@ -24,6 +28,7 @@
   font-family: "roboto-s";
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot");
   src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"); }
 
@@ -31,6 +36,7 @@
   font-family: "roboto-s";
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot");
   src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"); }
 
@@ -38,12 +44,11 @@
   font-family: "roboto-s";
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
   src: url("../fonts/Roboto_Slab/RobotoSlab-Light.eot");
   src: url("../fonts/Roboto_Slab/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Light.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Light.ttf") format("truetype"); }
 
-/*=====================================================================
-Стили сброса
-===================================================================== **/
+/* ============ Стили сброса ============== */
 textarea,
 input[type="text"],
 input[type="button"],
@@ -107,7 +112,6 @@ a:hover {
   text-decoration: none; }
 
 html, body {
-  height: 100%;
   text-size-adjust: 100%;
   -o-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -134,55 +138,3 @@ body {
 
 .text-center {
   text-align: center; }
-
-/*=====================================================================
-стили модулей, то есть блоков, которые могут
-использоваться несколько раз на одной странице. 
-===================================================================== **/
-/* ------------------------------------------------------------------ */
-/* Стили для slick-slider 
-/* ------------------------------------------------------------------ */
-/* Слайдер */
-/* Слайдер запущен */
-/* Слайдер с точками */
-/* Ограничивающая оболочка */
-/* Лента слайдов */
-/* Слайд */
-/* Слайд активный (показывается) */
-/* Слайд основной */
-/* Слайд по центру */
-/* Клонированный слайд */
-/* Стрелка */
-/* Стрелка влево */
-/* Стрелка вправо */
-/* Стрелка не активная */
-/* Точки (булиты) */
-/* Активная точка */
-/* Элемент точки */
-/*=====================================================================
-
-   Table of content:
-   a. Common styles.
-   b. Header styles.
-   c.
-   d.
-   e. 
-   f. 
-   g. 
-   h. 
-   i. 
-   j. 
-   k. 
-   l. 
-   m. 
-
-===================================================================== */
-/* ------------------------------------------------------------------ */
-/* a. Common styles.
-/* ------------------------------------------------------------------ */
-body {
-  background-color: #eeaaee; }
-
-/* ------------------------------------------------------------------ */
-/* b. Header Styles.
-/* ------------------------------------------------------------------ */
