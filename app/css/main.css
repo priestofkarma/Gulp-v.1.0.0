@@ -1,7 +1,15 @@
 @charset "UTF-8";
+/* $black: #303032;
+$text: #737373;
+$gray: #f3f3f3; */
+:root {
+  --black-color: #303032;
+  --text-color: #737373;
+  --gray-color: #f3f3f3; }
+
 /* fonts */
 @font-face {
-  font-family: "roboto";
+  font-family: "Roboto";
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -9,39 +17,39 @@
   src: url("../fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Light.woff") format("woff"), url("../fonts/Roboto/Roboto-Light.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "roboto";
-  font-weight: normal;
+  font-family: "Roboto";
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   src: url("../fonts/Roboto/Roboto-Regular.eot");
   src: url("../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "roboto";
-  font-weight: bold;
+  font-family: "Roboto";
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
   src: url("../fonts/Roboto/Roboto-Bold.eot");
   src: url("../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "roboto-s";
-  font-weight: bold;
+  font-family: "Roboto-Slab";
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
   src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot");
   src: url("../fonts/Roboto_Slab/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "roboto-s";
-  font-weight: normal;
+  font-family: "Roboto-Slab";
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
   src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot");
   src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "roboto-s";
+  font-family: "Roboto-Slab";
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -49,6 +57,7 @@
   src: url("../fonts/Roboto_Slab/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto_Slab/RobotoSlab-Light.woff") format("woff"), url("../fonts/Roboto_Slab/RobotoSlab-Light.ttf") format("truetype"); }
 
 /* ============ Стили сброса ============== */
+/* reset styles for iphones */
 textarea,
 input[type="text"],
 input[type="button"],
@@ -62,8 +71,8 @@ input {
   -moz-appearance: none;
   appearance: none; }
 
-/* Стили сброса для айфонов конец */
-/* Стили сбросса начало*/
+/* reset styles for iphones */
+/* reset styles */
 button::-moz-focus-inner {
   padding: 0;
   border: 0; }
@@ -94,7 +103,7 @@ input::placeholder {
 input {
   outline: none; }
 
-/* сброс кнопки очистки в инпутах в експлорере */
+/* reset clear btn in inputs for explorer */
 input::-ms-clear {
   display: none; }
 
@@ -119,14 +128,14 @@ html, body {
   -webkit-text-size-adjust: 100%; }
 
 body {
-  /* фикс скролла при overflow-y: hidden; на айфонах*/
+  /* фикс скролла при overflow-y: hidden; 
+  (на айфонах не всегда работает) */
   -webkit-overflow-scrolling: touch;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
-  font-family: roboto, sans-serif;
+  font-family: 'roboto', sans-serif;
   min-width: 320px;
   position: relative; }
 
@@ -138,3 +147,28 @@ body {
 
 .text-center {
   text-align: center; }
+
+/* Стили сброса для contact form7 */
+.wpcf7-form br {
+  display: none !important; }
+
+span.wpcf7-not-valid-tip {
+  display: none !important; }
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  display: none !important; }
+
+input.wpcf7-not-valid {
+  border: 1px solid red !important; }
+
+div.wpcf7-mail-sent-ok {
+  display: none !important; }
+
+div.wpcf7 .ajax-loader {
+  display: none !important; }
+
+/*Стили сброса для contact form7 end */
+/* header block */
+/* page blocks */
+/* footer block */
