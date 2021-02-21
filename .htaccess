@@ -4,12 +4,12 @@ Options -Indexes
 RewriteEngine On
 
 # RewriteCond %{HTTP:HTTPS} !=on [NC]
-# RewriteRule ^(.*)$ https://geektop.ru/$1 [R=301,L]
+# RewriteRule ^(.*)$ https://sitedomain.com/$1 [R=301,L]
 # SetEnvIf X-Forwarded-Proto https HTTPS=on
 # TODO: Change website domain
 RewriteCond %{HTTP_HOST} .
-RewriteCond %{HTTP_HOST} www.geektop.ru [NC]
-RewriteRule (.*) http://geektop.ru/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} www.sitedomain.ru [NC]
+RewriteRule (.*) http://sitedomain.ru/$1 [R=301,L]
 
 RewriteCond %{HTTP_USER_AGENT} wget [NC]
 RewriteRule .* - [F]
