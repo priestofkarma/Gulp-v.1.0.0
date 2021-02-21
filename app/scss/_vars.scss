@@ -1,14 +1,19 @@
-$black: #303032;
+/* $black: #303032;
 $text: #737373;
-$gray: #f3f3f3;
+$gray: #f3f3f3; */
 $gutter: 30px;
-$gradient: linear-gradient(189deg, #eeeeee 33%, #d2d2d2 94%);
+
+:root {
+    --black-color: #303032;
+    --text-color: #737373;
+    --gray-color: #f3f3f3;
+}
 
 /* fonts */
-$futura-light: FuturaPT-Light, sans-serif;
+$roboto: 'Roboto', sans-serif;
+$roboto-slab: 'Roboto-Slab', sans-serif;
 
-
-@mixin font($family: $futura-book, $size: 16px, $weight: 400) {
+@mixin font($size: 16px, $weight: 400, $family: $roboto) {
     font-family: $family;
     font-size: $size;
     font-weight: $weight;

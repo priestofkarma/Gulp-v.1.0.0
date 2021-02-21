@@ -1,4 +1,6 @@
 /* ============ Стили сброса ============== */
+
+/* reset styles for iphones */
 textarea,
 input[type="text"],
 input[type="button"],
@@ -13,10 +15,9 @@ input {
   -moz-appearance: none;
   appearance: none;
 }
+/* reset styles for iphones */
 
-/* Стили сброса для айфонов конец */
-
-/* Стили сбросса начало*/
+/* reset styles */
 button::-moz-focus-inner {
   padding: 0;
   border: 0;
@@ -37,7 +38,7 @@ input {
   outline: none;
 }
 
-/* сброс кнопки очистки в инпутах в експлорере */
+/* reset clear btn in inputs for explorer */
 input::-ms-clear {
   display: none;
 }
@@ -65,14 +66,15 @@ html, body {
 }
 
 body {
-  /* фикс скролла при overflow-y: hidden; на айфонах*/
+  /* фикс скролла при overflow-y: hidden; 
+  (на айфонах не всегда работает) */
   -webkit-overflow-scrolling: touch;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
-  font-family: roboto, sans-serif;
+  font-family: 'roboto', sans-serif;
   min-width: 320px;
   position: relative;
   //line-height: 1.65;
