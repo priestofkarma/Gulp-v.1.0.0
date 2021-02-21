@@ -1,6 +1,3 @@
-// Определяем переменную "preprocessor"
-let preprocessor = 'scss'; 
-
 // Определяем константы Gulp
 const { src, dest, parallel, series, watch } = require('gulp');
 
@@ -45,73 +42,59 @@ function scripts() {
 	return src([ // Берём файлы из источников
 		'app/library/jQuery/jquery-3.5.0.min.js', // Пример подключения библиотеки
 		'app/js/main.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
-		])
-	.pipe(concat('app.min.js')) // Конкатенируем в один файл
-	.pipe(uglify()) // Сжимаем JavaScript
-	.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
-	.pipe(browserSync.stream()); // Триггерим Browsersync для обновления страницы
+	])
+		.pipe(concat('app.min.js')) // Конкатенируем в один файл
+		.pipe(uglify()) // Сжимаем JavaScript
+		.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
+		.pipe(browserSync.stream()); // Триггерим Browsersync для обновления страницы
 }
 
 function styles() {
 	return src('app/scss/**/*.scss') // Выбираем источник
-	.pipe(sass()) // Преобразуем значение переменной "preprocessor" в функцию
-	.pipe(concat('main.min.css')) // Конкатенируем в файл app.min.js
-	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
-	.pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили
-	.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
-	.pipe(browserSync.stream()); // Сделаем инъекцию в браузер
+		.pipe(sass()) // Преобразуем значение переменной "preprocessor" в функцию
+		.pipe(concat('main.min.css')) // Конкатенируем в файл app.min.js
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+		.pipe(cleancss({ level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ })) // Минифицируем стили
+		.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
+		.pipe(browserSync.stream()); // Сделаем инъекцию в браузер
 }
 
 function stylesdev() {
 	return src('app/scss/**/*.scss') // Выбираем источник
-			.pipe(sass()) // Преобразуем значение переменной "preprocessor" в функцию
-			.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
-			.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
-			.pipe(browserSync.stream()); // Сделаем инъекцию в браузер
+		.pipe(sass()) // Преобразуем значение переменной "preprocessor" в функцию
+		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+		.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
+		.pipe(browserSync.stream()); // Сделаем инъекцию в браузер
 }
 
 function images() {
-	return src('app/images/src/**/*') // Берём все изображения из папки источника
-	.pipe(newer('app/images/dest/')) // Проверяем, было ли изменено (сжато) изображение ранее
-	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
-	.pipe(dest('app/images/dest/')); // Выгружаем оптимизированные изображения в папку назначения
+	return src('app/images/src/*') // Берём все изображения из папки источника
+		.pipe(newer('app/images/')) // Проверяем, было ли изменено (сжато) изображение ранее
+		.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+		.pipe(dest('app/images/')); // Выгружаем оптимизированные изображения в папку назначения
 }
 
 function cleanimg() {
-	return del('app/images/dest/**/*', { force: true }); // Удаляем всё содержимое папки "app/images/dest/"
+	return del(['app/images/*', '!app/images/src'], { force: true }); // Удаляем всё содержимое папки "app/images/dest/"
 }
 
 function buildcopy() {
 	return src([ // Выбираем нужные файлы
 		'app/css/**/*.min.css',
 		'app/js/**/*.min.js',
-		'app/images/dest/**/*',
-		'app/**/*.html',
-		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
-	.pipe(dest('dist')); // Выгружаем в папку с финальной сборкой
+		'app/images/*',
+		'app/fonts/**/*',
+		'!app/images/src',
+		'app/*.html',
+	], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+		.pipe(dest('dist/')); // Выгружаем в папку с финальной сборкой
 }
- 
+
 function cleandist() {
-	return del('dist/**/*', { force: true }); // Удаляем всё содержимое папки "dist/"
+	return del('dist', { force: true }); // Удаляем всё содержимое папки "dist/"
 }
 
 function startwatch() {
- 
-	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
-	watch(['app/js/*.js', '!app/js/*.min.js'], scripts);
-	
-	// Мониторим файлы препроцессора на изменения
-	watch('app/scss/**/*', styles);
- 
-	// Мониторим файлы HTML на изменения
-	watch('app/**/*.html').on('change', browserSync.reload);
- 
-	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
-	watch('app/images/src/**/*', images);
- 
-}
-
-function startwatchdev() {
 
 	// Мониторим файлы JS на изменения
 	watch(['app/js/*.js', '!app/js/*.min.js']).on('change', browserSync.reload);
@@ -123,16 +106,17 @@ function startwatchdev() {
 	watch('app/*.html').on('change', browserSync.reload);
 
 	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
-	watch('app/images/src/**/*', images);
+	watch('app/images/src/*', images);
 
 }
 
+
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
- 
+
 // Экспортируем функцию scripts() в таск scripts
 exports.scripts = scripts;
- 
+
 // Экспортируем функцию styles() в таск styles
 exports.styles = styles;
 exports.stylesdev = stylesdev;
@@ -143,11 +127,13 @@ exports.images = images;
 // Экспортируем функцию cleanimg() как таск cleanimg
 exports.cleanimg = cleanimg;
 
+exports.cleandist = cleandist;
+
 // Создаём новый таск "build", который последовательно выполняет нужные операции
 exports.build = series(cleandist, styles, scripts, images, buildcopy);
 
 //  Для зразработки
-exports.default = parallel(stylesdev, browsersync, startwatchdev);
+exports.default = parallel(stylesdev, images, browsersync, startwatch);
 
 // Экспортируем дефолтный таск с нужным набором функций
 // exports.default = parallel(styles, scripts, browsersync, startwatch);
