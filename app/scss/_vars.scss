@@ -3,17 +3,21 @@ $text: #737373;
 $gray: #f3f3f3; */
 $gutter: 30px;
 
+
+
 :root {
     --black-color: #303032;
     --text-color: #737373;
     --gray-color: #f3f3f3;
+    --text-font: 'Roboto', sans-serif;
+    --header-font: 'Roboto-Slab', sans-serif;
 }
 
 /* fonts */
 $roboto: 'Roboto', sans-serif;
 $roboto-slab: 'Roboto-Slab', sans-serif;
 
-@mixin font($size: 16px, $weight: 400, $family: $roboto) {
+@mixin font($size: 16px, $weight: 400, $family: var(--text-font)) {
     font-family: $family;
     font-size: $size;
     font-weight: $weight;
