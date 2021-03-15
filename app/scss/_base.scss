@@ -109,3 +109,22 @@ div.wpcf7 .ajax-loader {
   display: none !important;
 }
 /*Стили сброса для contact form7 end */
+
+.page_container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 2500px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 15px 10px rgba(0,0,0, 0.25);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
